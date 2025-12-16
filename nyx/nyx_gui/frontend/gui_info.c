@@ -2251,7 +2251,7 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 		strcat(txt_buf, "胜创 ");
 		break;
 	case 0x19:
-		strcat(txt_buf, "新东亚 ");
+		strcat(txt_buf, "新东亚1 ");
 		break;
 	case 0x1A:
 		strcat(txt_buf, "劲永 ");
