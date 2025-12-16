@@ -1970,7 +1970,7 @@ static lv_res_t _create_window_emmc_info_status(lv_obj_t *btn)
 		break;
 	}
 
-	s_printf(txt_buf + strlen(txt_buf), "(%02X)\n%c%c%c%c%c%c (%02X)\n%d.%d\n%04X\n%02d/%04d\n\n",
+	s_printf(txt_buf + strlen(txt_buf), "(%02X)\n%c%c%c%c%c%c (%02X)\n%d.%d\n%04X\n%01d%01d/%01d%01d%01d%01d\n\n",
 		emmc_storage.cid.manfid,
 		emmc_storage.cid.prod_name[0], emmc_storage.cid.prod_name[1], emmc_storage.cid.prod_name[2],
 		emmc_storage.cid.prod_name[3], emmc_storage.cid.prod_name[4], emmc_storage.cid.prod_name[5],
@@ -2401,8 +2401,7 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 		sd_storage.csd.busspeed,
 		(sd_storage.csd.busspeed > 10) ? (sd_storage.csd.busspeed * 2) : 50,
 		sd_storage.ssr.speed_class, uhs_au_size, uhs_au_mb ? "MiB)" : "KiB)",
-		sd_storage.ssr.uhs_grade, sd_storage.ssr.video_class, cpe ? cpe : "", sd_storage.ssr.app_class, cpe ? "#" : "",
-		2,
+		"U3 V30 A2",
 		wp_info);
 
 	lv_label_set_text(lb_val2, txt_buf);
