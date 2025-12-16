@@ -2402,7 +2402,7 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 		(sd_storage.csd.busspeed > 10) ? (sd_storage.csd.busspeed * 2) : 50,
 		sd_storage.ssr.speed_class, uhs_au_size, uhs_au_mb ? "MiB)" : "KiB)",
 		sd_storage.ssr.uhs_grade, sd_storage.ssr.video_class, cpe ? cpe : "", sd_storage.ssr.app_class, cpe ? "#" : "",
-		bus_speed,
+		2,
 		wp_info);
 
 	lv_label_set_text(lb_val2, txt_buf);
