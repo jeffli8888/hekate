@@ -682,7 +682,7 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 			break;
 
 		default:
-			strcpy(dram_model, "#FF8000 请联系作者!#");
+			strcpy(dram_model, "友达 A062TAN");
 			break;
 		}
 	}
