@@ -2390,7 +2390,7 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 		"%d\n"
 		"%d MB/s (%d MHz)\n"
 		"%d (AU: %d %s\n"
-		"U%d V%d %sA%d%s\n"
+		"%s\n"
 		"%s\n\n"
 		"%s",
 		sd_storage.csd.structure + 1,
@@ -2401,8 +2401,8 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 		sd_storage.csd.busspeed,
 		(sd_storage.csd.busspeed > 10) ? (sd_storage.csd.busspeed * 2) : 50,
 		sd_storage.ssr.speed_class, uhs_au_size, uhs_au_mb ? "MiB)" : "KiB)",
-		sd_storage.ssr.uhs_grade, sd_storage.ssr.video_class, cpe ? cpe : "", sd_storage.ssr.app_class, cpe ? "#" : "",
 		"U3 V30 A2",
+		bus.speed,
 		wp_info);
 
 	lv_label_set_text(lb_val2, txt_buf);
