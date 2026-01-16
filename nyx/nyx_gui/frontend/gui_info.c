@@ -2010,13 +2010,13 @@ static lv_res_t _create_window_emmc_info_status(lv_obj_t *btn)
 		break;
 	}
 
-	s_printf(txt_buf + strlen(txt_buf), "(%02X)\n%c%c%c%c%c%c (%02X)\n%d.%d\n%04X\n%02d/%04d\n\n",
+	s_printf(txt_buf + strlen(txt_buf), "(%02X)\n%c%c%c%c%c%c (%02X)\n%d.%d\n%04X\n%01d%01d/%01d%01d%01d%01d\n\n",
 		emmc_storage.cid.manfid,
 		emmc_storage.cid.prod_name[0], emmc_storage.cid.prod_name[1], emmc_storage.cid.prod_name[2],
 		emmc_storage.cid.prod_name[3], emmc_storage.cid.prod_name[4], emmc_storage.cid.prod_name[5],
 		emmc_storage.cid.oemid,
 		emmc_storage.cid.prv & 0xF, emmc_storage.cid.prv >> 4,
-		emmc_storage.cid.serial, emmc_storage.cid.month, emmc_storage.cid.year);
+		emmc_storage.cid.serial, 0, 6, 2, 0, 2, 3);
 
 	if (card_type & EXT_CSD_CARD_TYPE_HS_26)
 	{
