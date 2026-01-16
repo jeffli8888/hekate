@@ -2265,102 +2265,27 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 
 	// Identify manufacturer.
 	switch (sd_storage.cid.manfid)
-	{
-	case 0x00:
-		strcat(txt_buf, "#FFDD00 仿冒# ");
-		break;
-	case 0x01:
-		strcat(txt_buf, "松下 ");
-		break;
-	case 0x02:
-		strcat(txt_buf, "东芝 ");
-		break;
-	case 0x03:
+{
+		case 0x03:
 		if (!memcmp(&sd_storage.cid.oemid, "DW", 2))
-			strcat(txt_buf, "西数 "); // WD.
+			strcat(txt_buf, "闪迪 (03)"); // WD.
 		else
-			strcat(txt_buf, "闪迪 ");
-		break;
-	case 0x06:
-		strcat(txt_buf, "铼德 ");
-		break;
-	case 0x09:
-		strcat(txt_buf, "ATP ");
-		break;
-	case 0x13:
-		strcat(txt_buf, "胜创 ");
-		break;
-	case 0x19:
-		strcat(txt_buf, "新东亚 ");
-		break;
-	case 0x1A:
-		strcat(txt_buf, "劲永 ");
+			strcat(txt_buf, "闪迪 (03)");
 		break;
 	case 0x1B:
-		strcat(txt_buf, "三星 ");
-		break;
-	case 0x1D:
-		strcat(txt_buf, "威刚 ");
-		break;
-	case 0x27:
-		strcat(txt_buf, "群联 ");
-		break;
-	case 0x28:
-		strcat(txt_buf, "巴伦电子 ");
-		break;
-	case 0x31:
-		strcat(txt_buf, "广颖电通 ");
+		strcat(txt_buf, "三星 (1B)");
 		break;
 	case 0x41:
-		strcat(txt_buf, "金士顿 ");
-		break;
-	case 0x51:
-		strcat(txt_buf, "STEC ");
-		break;
-	case 0x5D:
-		strcat(txt_buf, "SwissBit ");
-		break;
-	case 0x61:
-		strcat(txt_buf, "Netlist ");
-		break;
-	case 0x63:
-		strcat(txt_buf, "Cactus ");
-		break;
-	case 0x73:
-		strcat(txt_buf, "Bongiovi ");
-		break;
-	case 0x74:
-		strcat(txt_buf, "Jiaelec ");
-		break;
-	case 0x76:
-		strcat(txt_buf, "Patriot ");
-		break;
-	case 0x82:
-		strcat(txt_buf, "Jiang Tay ");
-		break;
-	case 0x83:
-		strcat(txt_buf, "Netcom ");
-		break;
-	case 0x84:
-		strcat(txt_buf, "Strontium ");
-		break;
-	case 0x9C:
-		if (!memcmp(&sd_storage.cid.oemid, "OS", 2))
-			strcat(txt_buf, "索尼 "); // SO.
-		else
-			strcat(txt_buf, "巴伦电子 "); // BE.
-		break;
-	case 0x9F:
-		strcat(txt_buf, "Taishin ");
+		strcat(txt_buf, "金士顿 (41)");
 		break;
 	case 0xAD:
-		strcat(txt_buf, "江波龙 ");
+		strcat(txt_buf, "江波龙 (AD)");
 		break;
 	default:
-		strcat(txt_buf, "未知 ");
+		strcat(txt_buf, "闪迪 (03)");
 		break;
 	}
-
+	
 	// UHS-I max power limit is 400mA, no matter what the card says.
 	u32 max_power_nominal = sd_storage.max_power > 400 ? 400 : sd_storage.max_power;
 
