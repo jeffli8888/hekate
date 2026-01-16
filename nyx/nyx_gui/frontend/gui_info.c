@@ -1195,7 +1195,7 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 			strcat(txt_buf, "三星 ");
 			break;
 		}
-		strcat(txt_buf, "未知 #FFDD00 请联系作者!#");
+		strcat(txt_buf, "友达 A055TAN02");
 		break;
 	}
 
