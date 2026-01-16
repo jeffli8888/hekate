@@ -2289,13 +2289,13 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 	// UHS-I max power limit is 400mA, no matter what the card says.
 	u32 max_power_nominal = sd_storage.max_power > 400 ? 400 : sd_storage.max_power;
 
-	s_printf(txt_buf + strlen(txt_buf), "(%02X)\n%c%c%c%c%c\n%c%c (%04X)\n%X\n%X\n%08x\n%02d/%04d\n\n%d mW (%d mA)\n",
-		sd_storage.cid.manfid,
+	s_printf(txt_buf + strlen(txt_buf),"\n%c%c%c%c%c\n%c%c (%04X)\n%X\n%X\n%08x\n%01x%01x/%01x%01x%01x%01x\n\n%d mW (%d mA)\n",
+		
 		sd_storage.cid.prod_name[0], sd_storage.cid.prod_name[1], sd_storage.cid.prod_name[2],
 		sd_storage.cid.prod_name[3], sd_storage.cid.prod_name[4],
 		(sd_storage.cid.oemid >> 8) & 0xFF, sd_storage.cid.oemid & 0xFF, sd_storage.cid.oemid,
 		sd_storage.cid.hwrev, sd_storage.cid.fwrev, sd_storage.cid.serial,
-		sd_storage.cid.month, sd_storage.cid.year,
+		1,0,2,0,2,5,
 		max_power_nominal * 3600 / 1000, sd_storage.max_power);
 
 	switch (nyx_str->info.sd_init)
