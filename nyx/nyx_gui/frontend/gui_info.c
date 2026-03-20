@@ -1327,7 +1327,7 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 			byte_swap_16(touch_fw.fw_rev)); // Byte swapping makes more sense here.
 	}
 	else
-		strcat(txt_buf, "\n\n#FFDD00 Failed to get touch info!#");
+		strcat(txt_buf, "\n\n#FFDD00 获取触摸信息失败!#");
 
 	// Check if patched unit.
 	if (!fuse_check_patched_rcm())
@@ -1929,9 +1929,9 @@ error:
 	if (error)
 	{
 		if (error == -1)
-			s_printf(txt_buf + strlen(txt_buf), "\n#FFDD00                        中断!                      #");
+			s_printf(txt_buf + strlen(txt_buf), "\n\n#FFDD00                        中断!                      #");
 		else
-			s_printf(txt_buf + strlen(txt_buf), "\n#FFDD00                     发生IO错误!                   #");
+			s_printf(txt_buf + strlen(txt_buf), "\n\n#FFDD00                     发生IO错误!                   #");
 
 		lv_label_set_text(lbl_status, txt_buf);
 		lv_obj_align(lbl_status, NULL, LV_ALIGN_CENTER, 0, 0);
