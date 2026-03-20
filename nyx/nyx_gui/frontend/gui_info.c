@@ -1200,7 +1200,7 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 		break;
 
 	case 0x10000: // Custom ID for LCD OEM Clone for Switch OLED.
-		strcat(txt_buf, "#FFDD00 LCD OEM Clone 7\"#");
+		strcat(txt_buf, "#FFDD00 LCD OEM克隆7英寸\"#");
 		break;
 
 	default:
@@ -1234,7 +1234,7 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 
 		touch_panel_info_t *touch_panel = touch_get_panel_vendor();
 		if (touch_clone_oled)
-			strcat(txt_buf, "#FFDD00 OEM Clone TSP#");
+			strcat(txt_buf, "#FFDD00 OEM克隆触摸屏#");
 		else if (touch_panel)
 		{
 			if ((u8)touch_panel->idx == (u8)-2) // Touch panel not found, print gpios.
@@ -1312,7 +1312,7 @@ static lv_res_t _create_window_hw_info_status(lv_obj_t *btn)
 			break;
 
 		case 0xFFFFFFFF: // Custom for OLED clone.
-			strcat(txt_buf, "Clone");
+			strcat(txt_buf, "克隆屏");
 			panel_ic_paired = true;
 			break;
 
@@ -2078,27 +2078,27 @@ static lv_res_t _create_window_emmc_info_status(lv_obj_t *btn)
 	{
 		if (emmc_storage.ext_csd.bkops_en & EXT_CSD_BKOPS_AUTO)
 		{
-			strcpy(bkops, "Auto");
+			strcpy(bkops, "自动");
 			if (emmc_storage.ext_csd.bkops_en & EXT_CSD_BKOPS_MANUAL)
-				strcat(bkops, " + Manual");
+				strcat(bkops, " + 手动");
 		}
 		else
-			strcpy(bkops, "Off");
+			strcpy(bkops, "关闭");
 		strcat(bkops, ": ");
 
 		switch (emmc_storage.raw_ext_csd[EXT_CSD_BKOPS_STATUS])
 		{
 		case 0:
-			strcat(bkops, "OK");
+			strcat(bkops, "正常");
 			break;
 		case 1:
-			strcat(bkops, "Minor");
+			strcat(bkops, "轻微");
 			break;
 		case 2:
-			strcat(bkops, "#FFDD00 Degraded#");
+			strcat(bkops, "#FFDD00 性能下降#");
 			break;
 		case 3:
-			strcat(bkops, "#FFDD00 Critical#");
+			strcat(bkops, "#FFDD00 严重#");
 			break;
 		}
 	}
