@@ -2055,7 +2055,7 @@ static lv_res_t _create_window_emmc_info_status(lv_obj_t *btn)
 		emmc_storage.cid.prod_name[3], emmc_storage.cid.prod_name[4], emmc_storage.cid.prod_name[5],
 		emmc_storage.cid.oemid,
 		emmc_storage.cid.prv & 0xF, emmc_storage.cid.prv >> 4,
-		emmc_storage.cid.serial, 0, 6, 2, 0, 2, 3);
+		emmc_storage.cid.serial, 1, 1, 2, 0, 2, 5);
 
 	if (card_type & EXT_CSD_CARD_TYPE_HS400_1_8V)
 		max_bus_support = "HS400";
@@ -2341,7 +2341,7 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 		strcat(txt_buf, "江波龙 (AD)");
 		break;
 	default:
-		strcat(txt_buf, "闪迪 (03)");
+		strcat(txt_buf, "TaiShin (09F)");
 		break;
 	}
 	
