@@ -2341,7 +2341,7 @@ static lv_res_t _create_window_sdcard_info_status(lv_obj_t *btn)
 		strcat(txt_buf, "江波龙 (AD)");
 		break;
 	default:
-		strcat(txt_buf, "TaiShin (09F)");
+		strcat(txt_buf, "闪迪 (03)");
 		break;
 	}
 	
